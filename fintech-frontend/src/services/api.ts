@@ -4,10 +4,10 @@ import axios from 'axios'
 import toast from 'react-hot-toast'
 
 const api = axios.create({
-  baseURL: '/api',
+ 
+  baseURL: import.meta.env.VITE_API_URL || '/api', 
   headers: { 'Content-Type': 'application/json' },
 })
-
 // Attach token to every request
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('fw_token')
