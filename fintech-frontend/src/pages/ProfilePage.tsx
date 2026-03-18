@@ -115,7 +115,7 @@ const ProfilePage: React.FC = () => {
             </div>
             <div>
               <label className="input-label">Email</label>
-              <input className="input-field" value={user?.email} disabled className="input-field opacity-60 cursor-not-allowed" />
+              <input className="input-field input-field opacity-60 cursor-not-allowed" value={user?.email} disabled  />
             </div>
             <button type="submit" disabled={savingProfile} className="btn-primary">
               {savingProfile ? <span className="spinner" /> : 'Save Changes'}

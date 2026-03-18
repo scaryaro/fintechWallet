@@ -5,7 +5,7 @@ import { useSearchParams } from 'react-router-dom'
 import toast from 'react-hot-toast'
 import { walletApi } from '../services/api'
 import DashboardLayout from '../components/layout/DashboardLayout'
-import { formatNaira, LoadingSpinner } from '../components/ui'
+import {  LoadingSpinner } from '../components/ui'
 import { formatNaira as fmt } from '../utils/helpers'
 
 const PRESETS = [1000, 5000, 10000, 20000, 50000]
