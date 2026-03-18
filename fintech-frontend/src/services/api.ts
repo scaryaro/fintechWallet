@@ -16,20 +16,22 @@ api.interceptors.request.use((config) => {
 })
 
 // Global error handler
+// src/services/api.ts
+
 api.interceptors.response.use(
   (res) => res,
   (err) => {
-    const msg = err.response?.data?.message
+    const msg = err.response?.data?.message || "An unexpected error occurred";
+    
+    // Show the error to the user automatically!
+    toast.error(msg); 
+
     if (err.response?.status === 401) {
-      localStorage.removeItem('fw_token')
-      localStorage.removeItem('fw_user')
-      if (!window.location.pathname.includes('/login')) {
-        window.location.href = '/login'
-      }
+       // ... your logout logic
     }
-    return Promise.reject(err)
+    return Promise.reject(err);
   }
-)
+);
 
 // ── Auth ──────────────────────────────────────────────────────
 export const authApi = {
